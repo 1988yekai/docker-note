@@ -1,0 +1,53 @@
+﻿1. 容器生命周期管理
+run 创建一个新的容器并运行一个命令
+start/stop/restart docker start启动一个或多个已经被停止的容器；docker stop :停止一个运行中的容器；docker restart :重启容器
+kill 杀掉一个运行中的容器
+rm 删除一个或多少容器
+pause/unpause 暂停、恢复容器中所有的进程
+create 创建一个新的容器但不启动它
+exec 在运行的容器中执行命令 # docker exec -it 9df70f9a0714 /bin/bash
+2. 容器操作
+ps
+inspect（docker inspect 容器名称或 id）查看容器详细信息（如容器ip、开放端口等）
+top
+attach
+events
+logs
+wait
+export
+port
+3. 容器rootfs命令
+commit 提交一个运行中的容器为镜像 # docker commit -a "yek" -m "ubuntu desktop" imageName yek/ubuntu:v1
+cp
+diff
+4.镜像仓库
+login
+pull
+push
+search
+5.本地镜像管理
+images
+rmi
+tag
+build
+history
+save
+load
+import
+6. info|version
+info
+version
+
+*** docker ps 查看容器
+命令详细介绍 https://www.cnblogs.com/fuyuteng/p/8847331.html
+docker ps -a 查看所有容器
+## docker启动状态为Exited (0)容器 docker start dockerID
+
+*** windows挂载本地盘（docker desktop 要先设置driver）：
+docker run -t -i -v /d/PycharmProjects:/test ldzm/myubuntu:14.04 /bin/bash
+-v /d/PycharmProjects:/test 
+-v挂载本地文件夹到docker容器中，在容器中修改/test文件夹中的内容也就是修改D:\PycharmProjects文件夹中的内容 
+/d/PycharmProjects对应的windows的文件夹路径为D:\PycharmProjects 
+/test为容器中的文件的绝对路径
+*** docker 镜像地址 https://hub.docker.com/
+*** MySQL 运行命令 docker run --name mysql57 -e MYSQL_ROOT_PASSWORD=bat100 -p 13306:3306 -d mysql:5.7.26
