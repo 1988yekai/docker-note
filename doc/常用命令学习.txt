@@ -17,19 +17,24 @@ wait
 export
 port
 3. 容器rootfs命令
-commit 提交一个运行中的容器为镜像 # docker commit -a "yek" -m "ubuntu desktop" imageName yek/ubuntu:v1
-cp
-diff
+3.1 commit 提交一个运行中的容器为镜像 
+    docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]] 
+	eg:
+	    docker commit -a "yek" -m "ubuntu desktop" imageName yek/ubuntu:v1
+3.2 cp
+3.2 diff
 4.镜像仓库
 login
 pull
 push
 search
 5.本地镜像管理
+image
 images
 rmi
 tag
-build
+build # docker build [OPTIONS] PATH | URL | - 
+    eg: docker build -t yek/chrome77:1.0 . 
 history
 save
 load
