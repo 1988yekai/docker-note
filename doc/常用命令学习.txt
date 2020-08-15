@@ -36,8 +36,8 @@ tag
 build # docker build [OPTIONS] PATH | URL | - 
     eg: docker build -t yek/chrome77:1.0 . 
 history
-save
-load
+save  # docker save -o xx.tar dockerID/dockerName
+load  # docker load -i xx.tar #和save命令配合使用，导入导出镜像
 import
 6. info|version
 info
