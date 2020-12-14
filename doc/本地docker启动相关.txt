@@ -1,7 +1,7 @@
 docker run -p 6080:80 -p 5900:5900 -p 22:22 yek/ubuntu:v1
 docker run -p 6080:80 -p 5900:5900 -v /d/dockerfile:/data --name=openvpn dorowu/ubuntu-desktop-lxde-vnc
 
-docker run --name=bat100 -v /data:/data -d -e SA_PASSWORD=bat100.net -e SQLSERVER_DATABASE=bat100 -e SQLSERVER_USER=bat100 -e SQLSERVER_PASSWORD=bat100.net -p 1433:1433 exoplatform/sqlserver
+docker run --name=sqlserver1433 -v /data:/data -d -e SA_PASSWORD=sqlserver1433 -e SQLSERVER_DATABASE=sqlserver -e SQLSERVER_USER=sqlserver -e SQLSERVER_PASSWORD=sqlserver1433 -p 1433:1433 exoplatform/sqlserver
 
 docker run -d -p 27017:27017 --name mongo     -e MONGO_INITDB_ROOT_USERNAME=root     -e MONGO_INITDB_ROOT_PASSWORD=root27017     mongo
 
